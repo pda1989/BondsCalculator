@@ -57,6 +57,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.maxpriceNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.couponNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aciNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redemptionNumericUpDown)).BeginInit();
@@ -67,6 +69,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minpriceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maxpriceNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // couponNumericUpDown
@@ -312,6 +315,8 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.maxpriceNumericUpDown);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.minpriceNumericUpDown);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.daysComboBox);
@@ -380,7 +385,7 @@
             0,
             0,
             131072});
-            this.stepNumericUpDown.Location = new System.Drawing.Point(83, 74);
+            this.stepNumericUpDown.Location = new System.Drawing.Point(83, 100);
             this.stepNumericUpDown.Maximum = new decimal(new int[] {
             10,
             0,
@@ -404,7 +409,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 76);
+            this.label8.Location = new System.Drawing.Point(7, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 3;
@@ -443,6 +448,41 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Pokhlebaev.dmitry@gmail.com";
             // 
+            // maxpriceNumericUpDown
+            // 
+            this.maxpriceNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.maxpriceNumericUpDown.DecimalPlaces = 2;
+            this.maxpriceNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.maxpriceNumericUpDown.Location = new System.Drawing.Point(83, 74);
+            this.maxpriceNumericUpDown.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.maxpriceNumericUpDown.Name = "maxpriceNumericUpDown";
+            this.maxpriceNumericUpDown.Size = new System.Drawing.Size(85, 20);
+            this.maxpriceNumericUpDown.TabIndex = 9;
+            this.maxpriceNumericUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.maxpriceNumericUpDown.ValueChanged += new System.EventHandler(this.valueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Max. price";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,6 +510,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minpriceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maxpriceNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,6 +543,8 @@
         private System.Windows.Forms.NumericUpDown nominalNumericUpDown;
         private System.Windows.Forms.Label versionLabel;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.NumericUpDown maxpriceNumericUpDown;
+        private System.Windows.Forms.Label label7;
     }
 }
 

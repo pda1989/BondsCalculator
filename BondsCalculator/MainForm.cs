@@ -21,7 +21,7 @@ namespace BondsCalculator
         {
             profitabilityDataGridView.Rows.Clear();
 
-            for (decimal i = minpriceNumericUpDown.Value; i <= 100; i+= stepNumericUpDown.Value)
+            for (decimal i = minpriceNumericUpDown.Value; i <= maxpriceNumericUpDown.Value; i+= stepNumericUpDown.Value)
             {
                 var price = i;
                 var buy = nominalNumericUpDown.Value * i / 100 + aciNumericUpDown.Value;
