@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.nominalComboBox = new System.Windows.Forms.ComboBox();
             this.couponNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -38,11 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.redemptionNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.profitabilityDataGridView = new System.Windows.Forms.DataGridView();
-            this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BuyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SellColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProfitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProfitabilityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,6 +50,11 @@
             this.stepNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BuyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SellColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProfitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProfitabilityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.couponNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aciNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redemptionNumericUpDown)).BeginInit();
@@ -188,6 +190,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.profitabilityDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.profitabilityDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.profitabilityDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.profitabilityDataGridView.ColumnHeadersHeight = 30;
             this.profitabilityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PriceColumn,
@@ -195,6 +205,16 @@
             this.SellColumn,
             this.ProfitColumn,
             this.ProfitabilityColumn});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "0";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.profitabilityDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.profitabilityDataGridView.Location = new System.Drawing.Point(12, 176);
             this.profitabilityDataGridView.MultiSelect = false;
             this.profitabilityDataGridView.Name = "profitabilityDataGridView";
@@ -202,36 +222,6 @@
             this.profitabilityDataGridView.RowHeadersVisible = false;
             this.profitabilityDataGridView.Size = new System.Drawing.Size(393, 451);
             this.profitabilityDataGridView.TabIndex = 8;
-            // 
-            // PriceColumn
-            // 
-            this.PriceColumn.HeaderText = "Price";
-            this.PriceColumn.Name = "PriceColumn";
-            this.PriceColumn.ReadOnly = true;
-            // 
-            // BuyColumn
-            // 
-            this.BuyColumn.HeaderText = "Buy";
-            this.BuyColumn.Name = "BuyColumn";
-            this.BuyColumn.ReadOnly = true;
-            // 
-            // SellColumn
-            // 
-            this.SellColumn.HeaderText = "Sell";
-            this.SellColumn.Name = "SellColumn";
-            this.SellColumn.ReadOnly = true;
-            // 
-            // ProfitColumn
-            // 
-            this.ProfitColumn.HeaderText = "Profit";
-            this.ProfitColumn.Name = "ProfitColumn";
-            this.ProfitColumn.ReadOnly = true;
-            // 
-            // ProfitabilityColumn
-            // 
-            this.ProfitabilityColumn.HeaderText = "Profitability";
-            this.ProfitabilityColumn.Name = "ProfitabilityColumn";
-            this.ProfitabilityColumn.ReadOnly = true;
             // 
             // label5
             // 
@@ -391,6 +381,36 @@
             this.label9.TabIndex = 5;
             this.label9.Text = "Days per year";
             // 
+            // PriceColumn
+            // 
+            this.PriceColumn.HeaderText = "Price";
+            this.PriceColumn.Name = "PriceColumn";
+            this.PriceColumn.ReadOnly = true;
+            // 
+            // BuyColumn
+            // 
+            this.BuyColumn.HeaderText = "Buy";
+            this.BuyColumn.Name = "BuyColumn";
+            this.BuyColumn.ReadOnly = true;
+            // 
+            // SellColumn
+            // 
+            this.SellColumn.HeaderText = "Sell";
+            this.SellColumn.Name = "SellColumn";
+            this.SellColumn.ReadOnly = true;
+            // 
+            // ProfitColumn
+            // 
+            this.ProfitColumn.HeaderText = "Profit";
+            this.ProfitColumn.Name = "ProfitColumn";
+            this.ProfitColumn.ReadOnly = true;
+            // 
+            // ProfitabilityColumn
+            // 
+            this.ProfitabilityColumn.HeaderText = "Profitability";
+            this.ProfitabilityColumn.Name = "ProfitabilityColumn";
+            this.ProfitabilityColumn.ReadOnly = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,11 +449,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown redemptionNumericUpDown;
         private System.Windows.Forms.DataGridView profitabilityDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BuyColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SellColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProfitColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProfitabilityColumn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -444,6 +459,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown minpriceNumericUpDown;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BuyColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SellColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProfitColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProfitabilityColumn;
     }
 }
 
