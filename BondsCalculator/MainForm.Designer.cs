@@ -49,6 +49,8 @@
             this.nominalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.maxpriceNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.minpriceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.daysComboBox = new System.Windows.Forms.ComboBox();
@@ -57,8 +59,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.maxpriceNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.couponNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aciNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redemptionNumericUpDown)).BeginInit();
@@ -67,9 +67,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nominalNumericUpDown)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maxpriceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minpriceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maxpriceNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // couponNumericUpDown
@@ -330,6 +330,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings";
             // 
+            // maxpriceNumericUpDown
+            // 
+            this.maxpriceNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.maxpriceNumericUpDown.DecimalPlaces = 2;
+            this.maxpriceNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.maxpriceNumericUpDown.Location = new System.Drawing.Point(83, 74);
+            this.maxpriceNumericUpDown.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.maxpriceNumericUpDown.Name = "maxpriceNumericUpDown";
+            this.maxpriceNumericUpDown.Size = new System.Drawing.Size(85, 20);
+            this.maxpriceNumericUpDown.TabIndex = 9;
+            this.maxpriceNumericUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.maxpriceNumericUpDown.ValueChanged += new System.EventHandler(this.valueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Max. price";
+            // 
             // minpriceNumericUpDown
             // 
             this.minpriceNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -443,45 +478,10 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(220, 740);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(152, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(151, 13);
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Pokhlebaev.dmitry@gmail.com";
-            // 
-            // maxpriceNumericUpDown
-            // 
-            this.maxpriceNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.maxpriceNumericUpDown.DecimalPlaces = 2;
-            this.maxpriceNumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.maxpriceNumericUpDown.Location = new System.Drawing.Point(83, 74);
-            this.maxpriceNumericUpDown.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.maxpriceNumericUpDown.Name = "maxpriceNumericUpDown";
-            this.maxpriceNumericUpDown.Size = new System.Drawing.Size(85, 20);
-            this.maxpriceNumericUpDown.TabIndex = 9;
-            this.maxpriceNumericUpDown.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.maxpriceNumericUpDown.ValueChanged += new System.EventHandler(this.valueChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Max. price";
+            this.linkLabel1.Text = "pokhlebaev.dmitry@gmail.com";
             // 
             // MainForm
             // 
@@ -508,9 +508,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maxpriceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minpriceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maxpriceNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
