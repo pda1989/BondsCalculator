@@ -11,6 +11,12 @@ namespace BondsCalculator
             InitializeComponent();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            var version = Assembly.GetEntryAssembly().GetName().Version;
+            versionLabel.Text = "Version " + version;
+        }
+
         private void valueChanged(object sender, EventArgs e)
         {
             profitabilityDataGridView.Rows.Clear();
@@ -28,12 +34,6 @@ namespace BondsCalculator
                 catch (Exception) { }
                 profitabilityDataGridView.Rows.Add(i, buy, sell, sell - buy, Math.Round(profitability, 2));
             }
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            var version = Assembly.GetEntryAssembly().GetName().Version;
-            versionLabel.Text = "Version " + version;
         }
     }
 }
