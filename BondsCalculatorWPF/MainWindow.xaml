@@ -13,6 +13,7 @@
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="5"/>
+            <Setter Property="TextAlignment" Value="Right"/>
         </Style>
     </Window.Resources>
     <Grid>
@@ -42,13 +43,13 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Nominal"/>
-                    <TextBox Grid.Column="1"/>
+                    <TextBox Grid.Column="1" Text="0"/>
                     <TextBlock Grid.Row="1" Text="Coupon"/>
-                    <TextBox Grid.Row="1" Grid.Column="1"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="0"/>
                     <TextBlock Grid.Row="2" Text="ACI"/>
-                    <TextBox Grid.Row="2" Grid.Column="1"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="0"/>
                     <TextBlock Grid.Row="3" Text="Redemption"/>
-                    <TextBox Grid.Row="3" Grid.Column="1"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="0"/>
                 </Grid>
             </GroupBox>
             <GroupBox Grid.Column="1" Margin="5" Header="Settings">
@@ -64,13 +65,13 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Days per year"/>
-                    <TextBox Grid.Column="1"/>
+                    <TextBox Grid.Column="1" Text="0"/>
                     <TextBlock Grid.Row="1" Text="Min. price"/>
-                    <TextBox Grid.Row="1" Grid.Column="1"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="0"/>
                     <TextBlock Grid.Row="2" Text="Max. price"/>
-                    <TextBox Grid.Row="2" Grid.Column="1"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="0"/>
                     <TextBlock Grid.Row="3" Text="Price step"/>
-                    <TextBox Grid.Row="3" Grid.Column="1"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="0"/>
                 </Grid>
             </GroupBox>
         </Grid>
