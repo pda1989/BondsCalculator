@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BondsCalculatorWPF"
         mc:Ignorable="d"
-        Title="Bonds calculator" Height="350" Width="525">
+        Title="Bonds calculator" MinHeight="500" Height="500" MinWidth="500" Width="500">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="5"/>
@@ -76,10 +76,18 @@
         </Grid>
 
         <!--DataGrid header-->
-        <TextBlock Grid.Row="1" Text="Profitability" FontWeight="Bold" Margin="5,0"/>
+        <TextBlock Grid.Row="1" Text="Profitability" Margin="5,0" FontWeight="Bold"/>
         
         <!--DataGrid-->
-        
+        <DataGrid Grid.Row="2" Margin="5" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Price" Width="*"/>
+                <DataGridTextColumn Header="Buy" Width="*"/>
+                <DataGridTextColumn Header="Sell" Width="*"/>
+                <DataGridTextColumn Header="Profit" Width="*"/>
+                <DataGridTextColumn Header="Profitability" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
         
         <!--Tail-->
         <Grid Grid.Row="3">
@@ -88,7 +96,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Version" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
-            <TextBlock Grid.Column="1" Text="pokhlebaev.dmitry@gmail.com" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5">
+                <Hyperlink>
+                    pokhlebaev.dmitry@gmail.com
+                </Hyperlink>
+            </TextBlock>
         </Grid>
     </Grid>
 </Window>
