@@ -5,8 +5,90 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BondsCalculatorWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Bonds calculator" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         
+        <!--Header-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Margin="5"  Header="Bond">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Nominal"/>
+                    <TextBox Grid.Column="1"/>
+                    <TextBlock Grid.Row="1" Text="Coupon"/>
+                    <TextBox Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock Grid.Row="2" Text="ACI"/>
+                    <TextBox Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock Grid.Row="3" Text="Redemption"/>
+                    <TextBox Grid.Row="3" Grid.Column="1"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Column="1" Margin="5" Header="Settings">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Days per year"/>
+                    <TextBox Grid.Column="1"/>
+                    <TextBlock Grid.Row="1" Text="Min. price"/>
+                    <TextBox Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock Grid.Row="2" Text="Max. price"/>
+                    <TextBox Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock Grid.Row="3" Text="Price step"/>
+                    <TextBox Grid.Row="3" Grid.Column="1"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <!--DataGrid header-->
+        <TextBlock Grid.Row="1" Text="Profitability" FontWeight="Bold" Margin="5,0"/>
+        
+        <!--DataGrid-->
+        
+        
+        <!--Tail-->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Version" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Grid.Column="1" Text="pokhlebaev.dmitry@gmail.com" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+        </Grid>
     </Grid>
 </Window>
