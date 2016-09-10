@@ -43,13 +43,13 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Nominal"/>
-                    <TextBox Grid.Column="1" Text="0"/>
+                    <TextBox Grid.Column="1" Text="{Binding Path=Nominal}"/>
                     <TextBlock Grid.Row="1" Text="Coupon"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="0"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Coupon}"/>
                     <TextBlock Grid.Row="2" Text="ACI"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="0"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=ACI}"/>
                     <TextBlock Grid.Row="3" Text="Redemption"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="0"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Redemption}"/>
                 </Grid>
             </GroupBox>
             <GroupBox Grid.Column="1" Margin="5" Header="Settings">
@@ -65,13 +65,13 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Days per year"/>
-                    <TextBox Grid.Column="1" Text="0"/>
+                    <TextBox Grid.Column="1" Text="{Binding Path=Days}"/>
                     <TextBlock Grid.Row="1" Text="Min. price"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="0"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=MinPrice}"/>
                     <TextBlock Grid.Row="2" Text="Max. price"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="0"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=MaxPrice}"/>
                     <TextBlock Grid.Row="3" Text="Price step"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="0"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=PriceStep}"/>
                 </Grid>
             </GroupBox>
         </Grid>
@@ -96,7 +96,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Version" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Text="{Binding Path=AppVersion}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5">
                 <Hyperlink>
                     pokhlebaev.dmitry@gmail.com
