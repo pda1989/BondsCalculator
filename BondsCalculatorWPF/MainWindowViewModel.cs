@@ -1,6 +1,7 @@
 ﻿using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,6 +65,7 @@ namespace BondsCalculatorWPF
             get { return _days; }
             set { SetProperty(ref _days, value); }
         }
+        public ObservableCollection<ResultRow> Results { get; set; } = new ObservableCollection<ResultRow>();
 
         public MainWindowViewModel()
         {
@@ -76,6 +78,7 @@ namespace BondsCalculatorWPF
             MaxPrice = 200;
             PriceStep = 10;
             Days = 365;
+            Results.Add(new ResultRow { Buy = 12, Price = 234, Profit = 678, Profitability = 12, Sell = 2323 });
         }
     }
 }
