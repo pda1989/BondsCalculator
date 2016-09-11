@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -67,6 +68,8 @@ namespace BondsCalculatorWPF
         }
         public ObservableCollection<ResultRow> Results { get; set; } = new ObservableCollection<ResultRow>();
 
+        public DelegateCommand CalculateCommand { get; set; }
+
         public MainWindowViewModel()
         {
             AppVersion = "Version " + typeof(MainWindow).Assembly.GetName().Version.ToString();
@@ -74,11 +77,37 @@ namespace BondsCalculatorWPF
             Coupon = 12;
             ACI = 10;
             Redemption = 40;
-            MinPrice = 100;
-            MaxPrice = 200;
-            PriceStep = 10;
+            MinPrice = 90;
+            MaxPrice = 110;
+            PriceStep = 1;
             Days = 365;
-            Results.Add(new ResultRow { Buy = 12, Price = 234, Profit = 678, Profitability = 12, Sell = 2323 });
+
+            CalculateCommand = new DelegateCommand(CalculateProfitability);
+        }
+
+        public void CalculateProfitability()
+        {
+            Results.Clear();
+            for (double i = _minPrice; i <= _maxPrice; i += _priceStep)
+            {
+                var price = Math.Round(i, 2);
+                var buy = _nominal * price / 100 + _aci;
+                var sell = _nominal + _coupon;
+                var profitability = 0d;
+                try
+                {
+                    profitability = Math.Round((sell - buy) / buy * 100 / _redemption * _days, 2);
+                }
+                catch (Exception) { }
+                Results.Add(new ResultRow
+                {
+                    Buy = buy,
+                    Price = price,
+                    Profit = sell - buy,
+                    Sell = sell,
+                    Profitability = profitability
+                });
+            }
         }
     }
 }
