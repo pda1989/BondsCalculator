@@ -74,12 +74,9 @@ namespace BondsCalculatorWPF
         {
             AppVersion = "Version " + typeof(MainWindow).Assembly.GetName().Version.ToString();
             Nominal = 1000; 
-            Coupon = 12;
-            ACI = 10;
-            Redemption = 40;
             MinPrice = 90;
-            MaxPrice = 110;
-            PriceStep = 1;
+            MaxPrice = 100;
+            PriceStep = 0.1;
             Days = 365;
 
             CalculateCommand = new DelegateCommand(CalculateProfitability);
