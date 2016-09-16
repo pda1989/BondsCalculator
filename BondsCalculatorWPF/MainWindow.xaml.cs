@@ -10,7 +10,6 @@ namespace BondsCalculatorWPF
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
         }
     }
 }
