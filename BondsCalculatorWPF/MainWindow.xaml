@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:BondsCalculatorWPF"
         mc:Ignorable="d"
         Title="Bonds calculator" MinHeight="500" Height="600" MinWidth="500" Width="500">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="5"/>
@@ -37,9 +40,6 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
-    <Window.DataContext>
-        <local:MainWindowViewModel/>
-    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
