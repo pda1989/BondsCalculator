@@ -19,26 +19,6 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="TextAlignment" Value="Right"/>
         </Style>
-        
-        <ControlTemplate x:Key = "ButtonTemplate" TargetType = "Button">
-            <Grid>
-                <Rectangle x:Name = "ButtonEllipse" Height="20" Stroke="Black" Fill="#FFD7D7D7"/>
-                <ContentPresenter Content = "{TemplateBinding Content}" HorizontalAlignment = "Center" VerticalAlignment = "Center"/>
-            </Grid>
-            <ControlTemplate.Triggers>
-                <Trigger Property = "IsMouseOver" Value = "True">
-                    <Setter TargetName = "ButtonEllipse" Property = "Fill" Value="#FFCACACA"/> 
-                </Trigger>
-                <Trigger Property = "IsPressed" Value = "True">
-                    <Setter Property = "RenderTransform">
-                        <Setter.Value>
-                            <ScaleTransform ScaleX = "0.99" ScaleY = "0.99" CenterX = "0" CenterY = "0"/>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property = "RenderTransformOrigin" Value = "0.5,0.5" />
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -71,13 +51,13 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Nominal"/>
-                    <TextBox Grid.Column="1" Text="{Binding Path=Nominal}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Nominal}"/>
                     <TextBlock Grid.Row="1" Text="Coupon"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Coupon}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Coupon}"/>
                     <TextBlock Grid.Row="2" Text="ACI"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=ACI}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ACI}"/>
                     <TextBlock Grid.Row="3" Text="Redemption"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Redemption}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Redemption}"/>
                 </Grid>
             </GroupBox>
             <GroupBox Grid.Column="1" Margin="5" Header="Settings">
@@ -93,23 +73,23 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Days per year"/>
-                    <TextBox Grid.Column="1" Text="{Binding Path=Days}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Days}"/>
                     <TextBlock Grid.Row="1" Text="Min. price"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=MinPrice}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding MinPrice}"/>
                     <TextBlock Grid.Row="2" Text="Max. price"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=MaxPrice}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MaxPrice}"/>
                     <TextBlock Grid.Row="3" Text="Price step"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=PriceStep}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PriceStep}"/>
                 </Grid>
             </GroupBox>
-            <Button Grid.Row="1" Grid.ColumnSpan="2" Margin="5" Content="Calculate" Command="{Binding Path=CalculateCommand}" Template="{StaticResource ButtonTemplate}"/>
+            <Button Grid.Row="1" Grid.ColumnSpan="2" Margin="5" Content="Calculate" Command="{Binding CalculateCommand}"/>
         </Grid>
 
         <!--DataGrid header-->
         <TextBlock Grid.Row="1" Text="Profitability" Margin="5,0" FontWeight="Bold"/>
 
         <!--DataGrid-->
-        <DataGrid Grid.Row="2" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" RowHeaderWidth="0" ItemsSource="{Binding Path=Results}">
+        <DataGrid Grid.Row="2" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" RowHeaderWidth="0" ItemsSource="{Binding Results}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Price" Width="*" Binding="{Binding Price}"/>
                 <DataGridTextColumn Header="Buy" Width="*" Binding="{Binding Buy}"/>
@@ -125,7 +105,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding Path=AppVersion}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+            <TextBlock Text="{Binding AppVersion}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontWeight="Bold">
                 <Hyperlink>
                     pokhlebaev.dmitry@gmail.com
